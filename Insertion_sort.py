@@ -1,10 +1,18 @@
-def insertion_sort_decreasing(arr):
+from typing import List
+
+def insertion_sort_decreasing(arr: List[int]) -> None:
     """
-    Sorts an array in monotonically decreasing order using the insertion sort algorithm.
+    Sorts a list in monotonically decreasing order using the insertion sort algorithm.
 
     Parameters:
-    arr (list): The list of elements to be sorted.
+    arr (List[int]): The list of integers to be sorted.
+
+    Returns:
+    None: The function sorts the list in place.
     """
+    if not all(isinstance(x, int) for x in arr):
+        raise ValueError("All elements in the list must be integers.")
+
     # Traverse from the second element to the end of the array
     for i in range(1, len(arr)):
         key = arr[i]  # Element to be inserted into the sorted portion
